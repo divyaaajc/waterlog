@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_140608) do
+ActiveRecord::Schema.define(version: 2021_06_07_145052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "logs", force: :cascade do |t|
+    t.bigint "water_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_logs_on_user_id"
+    t.index ["water_id"], name: "index_logs_on_water_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "water_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index ["water_id"], name: "index_reviews_on_water_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +53,30 @@ ActiveRecord::Schema.define(version: 2021_06_07_140608) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "water_tags", force: :cascade do |t|
+    t.bigint "water_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tag_id"], name: "index_water_tags_on_tag_id"
+    t.index ["water_id"], name: "index_water_tags_on_water_id"
+  end
+
+  create_table "waters", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "description"
+    t.integer "ph"
+    t.string "source"
+    t.string "country"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "logs", "users"
+  add_foreign_key "logs", "waters"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "waters"
+  add_foreign_key "water_tags", "tags"
+  add_foreign_key "water_tags", "waters"
 end
