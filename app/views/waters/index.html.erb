@@ -1,5 +1,19 @@
-<div id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+    <%= form_tag waters_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a water"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+      <div id="movies">
+        <% @waters.each do |water| %>
+          <h4><%= water.name %></h4>
+          <p><%= image_tag water.photo %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>

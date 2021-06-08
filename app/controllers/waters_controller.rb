@@ -1,7 +1,12 @@
 class WatersController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @waters = Water.all
+    if params[:query].present?
+      @waters = Water.search_waters(params[:query])
+    else
+      @waters = Water.all
+    end
   end
 
   def show

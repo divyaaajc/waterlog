@@ -8,6 +8,13 @@ class Water < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :brand, :country, :description, :source, presence: true
   validates :ph, presence: true, numericality: true
+
+  include PgSearch::Model
+  pg_search_scope :search_waters,
+    against: [ :name, :brand, :description, :country, :source ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
   after_validation :geocode, if: :will_save_change_to_source?
 
   private
