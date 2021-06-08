@@ -1,12 +1,15 @@
-.navbar-lewagon {
+.navbar-waterlog {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  height: 60px;
+  background: #F9FCFF;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-bottom: 3px solid black;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-logo-div {
+  width: 100px;
+  height: 30px;
 }
