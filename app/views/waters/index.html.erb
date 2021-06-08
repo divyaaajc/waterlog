@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+    <%= form_tag waters_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a water"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+      <div id="movies">
+        <% @waters.each do |water| %>
+          <h4><%= water.name %></h4>
+          <p><%= image_tag water.photo %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

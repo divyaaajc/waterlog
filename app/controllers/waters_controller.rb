@@ -1,7 +1,11 @@
 class WatersController < ApplicationController
 
   def index
-    @waters = Water.all
+    if params[:query].present?
+      @waters = Water.search_waters(params[:query])
+    else
+      @waters = Water.all
+    end
   end
 
   def show
