@@ -1,0 +1,23 @@
+.form-div {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: white;
+  width: 1150px;
+  padding: 50px;
+}
+
+.input-field {
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 40px;
+  letter-spacing: 3px;
+  padding: 50px;
+}
+
+
+// <%= simple_form_for @user do |f| %>
+//   <%= f.input :username, label: 'Your username please', input_html: { class: 'input-field' } %>
+//   <%= f.input :password, input_html: { class: 'input-field' } %>
+//   <%= f.button :submit, input_html: { class: 'submit-button' } %>
+// <% end %>
