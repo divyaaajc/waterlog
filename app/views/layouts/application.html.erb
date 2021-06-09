@@ -9,8 +9,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-
-    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
@@ -18,8 +16,6 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <div class="footer-cta">
     <div class="footer-links">
@@ -36,5 +32,6 @@
     </div>
 
   </div>
+
   </body>
 </html>
