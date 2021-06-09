@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :logs, only: :create
   end
   resources :logs, only: :index
-  resources :reviews, only: :destroy
+  resources :reviews, only: [:destroy, :update]
 end
