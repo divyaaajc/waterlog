@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action: set_review, only: [:destroy, :update]
+  before_action :set_review, only: [:destroy, :edit, :update]
   
   def create
     @review = Review.new(strong_params)
@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(strong_params)
-      redirect_to water_path(@water)
+      redirect_to water_path(@review.water)
     else
       render 'waters/show'
     end

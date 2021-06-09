@@ -11,7 +11,7 @@ class WatersController < ApplicationController
 
   def show
     @water = Water.find(params[:id])
-
+    @review = Review.new
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = [
       {
@@ -20,4 +20,3 @@ class WatersController < ApplicationController
       }]
   end
 end
-
