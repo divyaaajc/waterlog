@@ -1,3 +1,62 @@
+<!-- banner -->
+<div class="banner-container">
+  <div class="banner" style="background-image: url(<%= asset_path('banner_background_mountain.jpg') %>);">
+    <div class="banner-contents-container">
+      <h1>Rediscover Water</h1>
+      <p>Find, log and rate waters from all over the world.</p>
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="searchbar-container">
+          <input class="searchbar string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="submit-button">
+            Search water
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- index card -->
+<div class="card-bottle-tall">
+  <div class="card-bottle-tall-image-container">
+    <img src="http://www.finewaters.com/images/bottles/italy/pannaL.jpg" />
+  </div>
+  <div class="card-bottle-info">
+    <div class="card-bottle-info-container">
+      <p>acquapanna</p>
+      <p>acquapanna</p>
+      <p>Still</p>
+      <p>Italy</p>
+      <p>8.2 ph</p>
+    </div>
+  </div>
+</div>
+
+<!-- showpage card -->
+<div class="card-wide">
+  <div class="card-wide-top-container">
+    <div class="card-wide-info-container">
+      <div class="card-wide-info">
+        <p>brand</p>
+        <p>name</p>
+        <p>country of origin</p>
+        <p>place</p>
+        <p>ph level</p>
+        <p>tags</p>
+        <p>average rating</p>
+      </div>
+    </div>
+    <div class="card-wide-image-container">
+      <img src="http://www.finewaters.com/images/bottles/italy/pannaL.jpg" />
+    </div>
+  </div>
+  <div class="card-wide-footer">
+    <div class="card-wide-footer-info-container">
+      <h3>I've tried this!</h3>
+    </div>
+  </div>
+</div>
+
 <div class="right-cta-column">
   <p>sq</p>
 </div>
@@ -32,7 +91,4 @@
     <button class="submit-button">Search water</button>
   </div>
 </div>
-
-
-
 
