@@ -1,0 +1,63 @@
+// home page and index card
+
+.card-bottle-tall {
+  overflow: hidden;
+  border-style: solid;
+  background: white;
+  border-color: black;
+  border-width: 1px;
+  width: 360px;
+  height: 500px;
+}
+
+.card-bottle-tall > img {
+  height: 360px;
+  width: 360px;
+  object-fit: cover;
+  margin-left: 16px;
+}
+
+.card-bottle-info {
+  height: 140px;
+  width: 360px;
+}
+
+// show-page card
+
+.card-bottle-wide {
+  height: 670px;
+  width: 1150px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  margin-left: 92px;
+  margin-top: 350px;
+  margin-right: 187px;
+}
+
+.card-wide-top-container {
+
+}
+
+.card-bottle-wide > img {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+
+}
+
+.card-bottle-wide-info {
+
+}
+
+.card-bottle-footer {
+
+}
+
+
+
+
+
+
+
+
