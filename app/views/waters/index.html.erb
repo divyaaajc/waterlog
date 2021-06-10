@@ -9,7 +9,7 @@
       %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
-      <div id="movies">
+      <div id="waters">
         <% @waters.each do |water| %>
           <h4><%= water.name %></h4>
           <p><%= image_tag water.photo %></p>
@@ -17,4 +17,3 @@
       </div>
     </div>
   </div>
-  
