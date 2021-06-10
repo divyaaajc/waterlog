@@ -2,29 +2,27 @@
 // home page and index card
 
 .card-bottle-tall {
-  width: 360px;
-  height: 500px;
+  width: 90%;
+  min-height: 500px;
   background: white;
   border-style: solid;
   border-color: black;
   border-width: 1px;
-  margin-left: 60px;
-  overflow: hidden;
+  transition: 0.5s;
   .card-bottle-tall-image-container {
     height: 360px;
-    width: 360px;
+    width: 90%;
     display: flex;
     justify-content: center;
     padding: 16px;
     img {
       max-height: 360px;
-      max-width: 360px;
+      max-width: 90%;
       object-fit: cover;
     }
   }
   .card-bottle-info {
-    height: 140px;
-    width: 360px;
+    width: 90%;
     .card-bottle-info-container {
       margin-left: 12px;
       margin-top: 5px;
@@ -33,9 +31,17 @@
       align-content: flex-start;
       p {
         margin: 0px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
   }
+}
+
+.card-bottle-tall:hover {
+  filter: brightness(70%);
 }
 
 // show-page card
