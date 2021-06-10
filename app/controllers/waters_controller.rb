@@ -3,9 +3,9 @@ class WatersController < ApplicationController
 
   def index
     if params[:query].present?
-      @waters = Water.search_waters(params[:query])
+      @waters = Water.search_waters(params[:query]).paginate(page: params[:page], per_page: 20)
     else
-      @waters = Water.all
+      @waters = Water.paginate(page: params[:page], per_page: 20)
     end
   end
 
