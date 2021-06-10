@@ -1,21 +1,21 @@
 <div>
   <h1><%= @water.name %></h1>
 </div>
-
 <div>
-  <p><%= @water.brand %></p>
-  <p><%= @water.ph %></p>
-  <p><%= @water.source %></p>
-  <p><%= @water.country %></p>
-  <p><%= "@water.rating" %></p>
-</div>
-
-<div>
-  <%= image_tag @water.photo, alttext: "yo" %>
-</div>
-
-<div>
-  <p><%= @water.description %></p>
+  <div>
+    <p><%= @water.brand %></p>
+    <p><%= @water.ph %></p>
+    <p><%= @water.source %></p>
+    <p><%= @water.country %></p>
+    <p><%= "@water.rating" %></p>
+  </div>
+  <div>
+    <%= image_tag @water.photo, alttext: "yo" %>
+  </div>
+  <div>
+    <p><%= @water.description %></p>
+  </div>
+  <%= link_to "I've tried this water", add_water_to_log_water_path, method: :post %>
 </div>
 
 <hr class="my-5">

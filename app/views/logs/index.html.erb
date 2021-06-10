@@ -1,0 +1,9 @@
+<h1>YOUR WATERS</h1>
+
+<%= link_to "ADD WATERS TO YOUR LOG", waters_path %>
+
+<% @logs.each do |log| %>
+  <h4><%= log.water_id %></h4>
+  <h4><%= log.water.name %></h4>
+  <h4><%= image_tag log.water.photo %></h4>
+<% end %>
