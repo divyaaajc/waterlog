@@ -2,8 +2,8 @@ class WatersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    if params[:query].present?
-      @waters = Water.search_waters(params[:query]).paginate(page: params[:page], per_page: 20)
+    if params.dig(:search, :query).present?
+      @waters = Water.search_waters(params[:search][:query]).paginate(page: params[:page], per_page: 20)
     else
       @waters = Water.paginate(page: params[:page], per_page: 20)
     end
