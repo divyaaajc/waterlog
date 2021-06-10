@@ -13,7 +13,8 @@
       <div id="movies">
         <% @waters.each do |water| %>
           <h4><%= water.name %></h4>
-          <p><%= image_tag water.photo%></p>
+          <p><%= image_tag water.photo %></p>
+          <%= link_to 'Show', water_path(water) %>
         <% end %>
       </div>
     </div>
