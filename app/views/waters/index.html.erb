@@ -9,22 +9,25 @@
       <div class="row">
         <% @waters.each do |water| %>
           <div class="col-12 col-sm-6 col-md-4 mb-5 pl-0">
-            <div class="card-bottle-tall">
-              <div class="card-bottle-tall-image-container">
-                <%= image_tag water.photo %>
-              </div>
-              <div class="card-bottle-info">
-                <div class="card-bottle-info-container">
-                  <p><%= water.name %></p>
-                  <p><%= water.brand %></p>
-                  <p><%= water.source %></p>
-                  <p><%= water.country %></p>
-                  <p><%= water.ph %></p>
+            <%= link_to water_path(water) do  %>
+              <div class="card-bottle-tall">
+                <div class="card-bottle-tall-image-container">
+                  <%= image_tag water.photo %>
+                </div>
+                <div class="card-bottle-info">
+                  <div class="card-bottle-info-container">
+                    <p><%= water.name %></p>
+                    <p><%= water.brand %></p>
+                    <p><%= water.source %></p>
+                    <p><%= water.country %></p>
+                    <p><%= water.ph %></p>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           </div>
         <% end %>
+        <%= will_paginate @waters %>
       </div>
     </div>
   </div>

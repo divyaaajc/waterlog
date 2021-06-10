@@ -1,12 +1,13 @@
 .pagination {
-  background: #F4F4F4;
   // border: 1px solid #e5e5e5;
   text-align: center;
-  padding: 1em;
+  padding-bottom: 1em;
   cursor: default;
   display: flex;
   align-items: center;
+  justify-content: center;
  }
+ 
   .pagination a, .pagination span {
     padding: 0.2em 0.3em; }
   .pagination .disabled {
