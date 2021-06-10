@@ -16,20 +16,8 @@
   right:0px;
   top:0px;
   background: white;
-  z-index: -1;
+  // z-index: -1;
 }
-
-// .right-cta-heading {
-//   transform: rotate(-90deg);
-//   font-size: 10px;
-//   width: 60px;
-//   height: 60px;
-//   background: red;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   color: black;
-// }
 
 .left-column {
   height: 100vh;
@@ -86,6 +74,13 @@
   border-width: 1px;
   background-color: white;
   width: calc(100vw - 180px);
-  padding: 50px;
+  padding: 20px;
+  margin-left: 60px;
+}
+
+.flexbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: calc(100vw - 180px);
 }
 

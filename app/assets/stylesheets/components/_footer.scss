@@ -6,15 +6,16 @@
   height: 50px;
   // padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  position: fixed;
-  left: 0;
-  bottom: 50px;
+  // position: fixed;
+  // left: 0;
+  // bottom: 50px;
   width: 100%;
   background: white;
   padding-left: 20px;
   padding-right: 20px;
   border-top: 1px solid black;
   color: black;
+  z-index: 5;
 }
 
 .footer {
@@ -25,15 +26,20 @@
   height: 50px;
   // padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  // position: sticky;
+  // left: 0;
+  // bottom: 0;
   width: 100%;
   background: white;
   padding-left: 20px;
   padding-right: 20px;
   border-top: 1px solid black;
   color: black;
+  z-index: 5;
+}
+
+.footer-container {
+  z-index: 5;
 }
 
 .footer-links {

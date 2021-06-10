@@ -12,23 +12,44 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    
+    <div class="page-container">
+      <div class="navbar-container"><%= render "shared/navbar" %></div>
+      <div class="content-container">
+        <%= render 'shared/flashes' %>
 
-    <%= yield %>
+        <%= yield %>
 
-    <div class="footer-cta">
-    <div class="footer-links">
-      <a class="navbar-brand" href="#">FIND A RANDOM WATER</a>
-    </div>
+        <div class="right-cta-column">
+          <p style="writing-mode: vertical-rl">YOUR WATERS</p>
+        </div>
 
-    <div class="footer">
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <div class="right-column">
+          <p>sq</p>
+        </div>
+
+        <div class="left-column">
+          <p>sq</p>
+        </div>
+
       </div>
-      <div class="footer-copyright">
-        Made with <i class="fas fa-tint"></i> at WaterLog
+      <div class="footer-container">
+
+        <div class="footer-cta">
+          <div class="footer-links">
+            <a class="navbar-brand" href="#">FIND A RANDOM WATER</a>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="footer-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="footer-copyright">
+            Made with <i class="fas fa-tint"></i> at WaterLog
+          </div>
+        </div>
       </div>
     </div>
 

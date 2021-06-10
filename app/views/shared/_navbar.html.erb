@@ -2,7 +2,9 @@
 <nav class="navbar">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Waterlog</a>
+  <ul class="navbar-brand">
+    <%= link_to 'Waterlog', root_path %>
+  </ul>
 
   <!-- Collapse button -->
   <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
@@ -15,26 +17,25 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+        <%= link_to 'HOME', root_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'ABOUT US', root_path %> <!-- Implement correct about us and create route -->
       </li>
       <li class="nav-item">
         <%= link_to 'ALL WATERS', waters_path %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">ABOUT US</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">YOUR WATERS</a>
-      </li>
-      <li class="nav-item">
         <% if user_signed_in? %>
+          <%= link_to 'YOUR WATERS', logs_path %>
+          <hr>
           <%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete %>
         <% else %>
           <%= link_to 'REGISTER', new_user_registration_path %> or <%= link_to 'LOG IN', new_user_session_path %>
         <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">FIND A RANDOM WATER</a>
+        <a class="nav-link" href="#">FIND A RANDOM WATER</a> <!-- Implement correct about us and create route -->
       </li>
     </ul>
     <!-- Links -->

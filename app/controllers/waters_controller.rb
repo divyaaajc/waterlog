@@ -3,9 +3,9 @@ class WatersController < ApplicationController
 
   def index
     if params.dig(:search, :query).present?
-      @waters = Water.search_waters(params[:search][:query])
+      @waters = Water.search_waters(params[:search][:query]).paginate(page: params[:page], per_page: 20)
     else
-      @waters = Water.all
+      @waters = Water.paginate(page: params[:page], per_page: 20)
     end
   end
 
@@ -18,5 +18,17 @@ class WatersController < ApplicationController
         lat: @water.latitude,
         lng: @water.longitude
       }]
+  end
+
+  def add_water_to_log
+    @log = Log.new
+    @log.user = current_user
+    @water = Water.find(params[:id])
+    @log.water = @water
+    if @log.save
+      redirect_to logs_path
+    else
+      redirect_to logs_path, notice: "You have already tried this water"
+    end
   end
 end
