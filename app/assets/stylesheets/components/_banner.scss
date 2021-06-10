@@ -1,7 +1,7 @@
 // banner
 .banner-container {
-  height: calc(100vh - 60px);
-  margin-bottom: 60px;
+  height: calc(100vh - 200px);
+  margin-bottom: 100px;
   overflow: hidden;
   .banner {
     display: flex;
@@ -14,7 +14,7 @@
       flex-direction: column;
       h1 {
         margin-bottom: 30px;
-        font-size: 130px;
+        font-size: 100px;
       }
       p {
         margin-bottom: 30px;
