@@ -17,15 +17,15 @@
 }
 
 .fa-1x {
-font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .navbar-toggler.toggler-example {
-cursor: pointer;
+  cursor: pointer;
 }
 
 .navbar-text {
-color: black;
+  color: black;
 }
 
 .navbar-collapse {
@@ -40,6 +40,9 @@ color: black;
 .burger-dropdown:hover {
   transform: scale(1.2);
   cursor: pointer;
+
+.fa-hand-holding-water {
+  font-size: 25px;
 }
 
 // .navbar-waterlog {
