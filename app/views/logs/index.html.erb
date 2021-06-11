@@ -8,7 +8,7 @@
       <div class="row">
         <% @logs.each do |log| %>
           <div class="col-12 col-sm-6 col-md-4 mb-5 pl-0">
-            <%= link_to water_path(log) do  %>
+            <%= link_to water_path(log.water) do  %>
               <div class="card-bottle-tall">
                 <div class="card-bottle-tall-image-container">
                   <%= image_tag log.water.photo %>
