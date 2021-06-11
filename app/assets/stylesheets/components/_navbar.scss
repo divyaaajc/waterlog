@@ -46,6 +46,17 @@
   font-size: 25px;
 }
 
+.logo{
+  a {
+    transition: 0.3s;
+  }
+  a:hover {
+    opacity: 1;
+    color: grayscale($color:  #38554F);
+  }
+}
+
+
 // .navbar-waterlog {
 //   display: flex;
 //   justify-content: space-between;
