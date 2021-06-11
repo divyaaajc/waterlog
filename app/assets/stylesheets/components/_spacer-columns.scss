@@ -34,6 +34,7 @@
   position: fixed;
   left:0px;
   top:0px;
+  opacity: 0;
   // background: grey;
   z-index: -1;
 }
@@ -53,6 +54,7 @@
   position:fixed;
   right:60px;
   top:0px;
+  opacity: 0;
   // background: grey;
   z-index: -1;
 }
