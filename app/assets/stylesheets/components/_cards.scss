@@ -42,43 +42,37 @@
 // show-page card
 
 .card-wide {
-  height: 670px;
-  width: 1150px;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  margin-left: 60px;
-  margin-top: 60px;
-  margin-right: 190px;
+  // height: 575px;
+  max-width: 100%;
+  border: solid 1px black;
+  margin: 0 auto;
   .card-wide-top-container {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     height: 575px;
     .card-wide-info-container {
       width: 50%;
       display: flex;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.0);
-      border-right-style: solid;
-      border-right-color: black;
-      border-right-width: 1px;
+      // background-color: rgba(0, 0, 0, 0.0);
       margin-left: 30px;
+      border-right: 1px solid black;
       .card-wide-info {
         display: flex;
         flex-direction: column;
       }
     }
-    .card-wide-image-container {
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      background-color: white;
-      padding: 40px;
-      img {
-        max-height: 575px;
-        max-width: 575px;
-        object-fit: cover;
-      }
+  }
+  .card-wide-image-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 40px;
+    img {
+      max-height: 575px;
+      max-width: 575px;
+      object-fit: cover;
     }
   }
   .card-wide-footer {
@@ -86,9 +80,7 @@
     align-items: center;
     justify-content: flex-start;
     background-color: white;
-    border-top-style: solid;
-    border-top-color: black;
-    border-top-width: 1px;
+    border-top: solid 1px black;
     height: 93px;
     width: 100%;
     .card-wide-footer-info-container {
