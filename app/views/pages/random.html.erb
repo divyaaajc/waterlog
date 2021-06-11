@@ -2,6 +2,8 @@
 
   <h1 class="mt-5 mb-5"><%= @water.name.upcase %></h1>
 
+  <button onclick=location=URL>Looking for another random water</button>
+  
   <div  class="card-wide d-flex flex-column">
     <div class="card-wide-top-container">
       <div class="card-wide-info-container">
@@ -101,5 +103,4 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  </div>
-</div>
+  </di

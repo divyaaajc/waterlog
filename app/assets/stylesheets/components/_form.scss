@@ -3,18 +3,29 @@
   border-color: black;
   border-width: 1px;
   background-color: white;
-  width: calc(100vw - 180px);
-  padding: 50px;
+  width: calc(100vw - 160px);
+  padding: 30px;
+  margin-left: 50px;
+}
+
+.form-style {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: white;
 }
 
 .input-field {
   text-transform: uppercase;
   font-style: italic;
-  font-size: 40px;
+  font-size: 20px;
   letter-spacing: 3px;
-  padding: 50px;
+  padding: 10px;
 }
 
+.form-control {
+  border: black;
+}
 
 // <%= simple_form_for @user do |f| %>
 //   <%= f.input :username, label: 'Your username please', input_html: { class: 'input-field' } %>

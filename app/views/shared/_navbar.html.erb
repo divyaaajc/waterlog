@@ -5,7 +5,6 @@
   <div class="nav-item logo">
     WaterLog
   </div>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
@@ -17,6 +16,7 @@
           <%= link_to 'HOME', root_path, class: "dropdown-item" %>
           <%= link_to 'ABOUT US', about_path, class: "dropdown-item" %>
           <%= link_to 'ALL WATERS', waters_path, class: "dropdown-item" %>
+          <%= link_to 'FIND A RANDOM WATER', random_path, class: "dropdown-item" %>
           <% if user_signed_in? %>
             <%= link_to 'YOUR WATERS', logs_path, class: "dropdown-item" %>
             <hr>

@@ -34,7 +34,8 @@
   position: fixed;
   left:0px;
   top:0px;
-  background: grey;
+  opacity: 0;
+  // background: grey;
   z-index: -1;
 }
 
@@ -53,7 +54,8 @@
   position:fixed;
   right:60px;
   top:0px;
-  background: grey;
+  opacity: 0;
+  // background: grey;
   z-index: -1;
 }
 
@@ -69,10 +71,10 @@
 }
 
 .content2-div {
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  background-color: white;
+  // border-style: solid;
+  // border-color: black;
+  // border-width: 1px;
+  // background-color: white;
   width: calc(100vw - 180px);
   padding: 20px;
   margin-left: 60px;

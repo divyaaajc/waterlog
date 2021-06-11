@@ -13,3 +13,32 @@ $headers-font: "Poppins";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h1 {
+  font-size: 60px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 60px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+p {
+  font-weight: light;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.small-text-show {
+  font-weight: light;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
