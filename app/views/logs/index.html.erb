@@ -1,32 +1,28 @@
-<h1>YOUR WATERS</h1>
+<div class="content2-div">
+  <h1 class="mb-4">YOUR WATERS</h1>
 
-<%= link_to "ADD WATERS TO YOUR LOG", waters_path %>
-
-<div class="index-container">
-  <div class="container">
-    <div class="mt-3" id="waters">
-      <div class="row">
-        <% @logs.each do |log| %>
-          <div class="col-12 col-sm-6 col-md-4 mb-5 pl-0">
-            <%= link_to water_path(log.water) do  %>
-              <div class="card-bottle-tall">
-                <div class="card-bottle-tall-image-container">
-                  <%= image_tag log.water.photo %>
-                </div>
-                <div class="card-bottle-info">
-                  <div class="card-bottle-info-container">
-                    <p><%= log.water.name %></p>
-                    <p><%= log.water.brand %></p>
-                    <p><%= log.water.source %></p>
-                    <p><%= log.water.country %></p>
-                    <p><%= log.water.ph %></p>
-                  </div>
+  <div class="mt-3" id="waters">
+    <div class="row">
+      <% @logs.each do |log| %>
+        <div class="col-12 col-sm-6 col-md-4 mb-5">
+          <%= link_to water_path(log.water) do  %>
+            <div class="card-bottle-tall">
+              <div class="card-bottle-tall-image-container">
+                <%= image_tag log.water.photo %>
+              </div>
+              <div class="card-bottle-info">
+                <div class="card-bottle-info-container">
+                  <p><%= log.water.name %></p>
+                  <p><%= log.water.brand %></p>
+                  <p><%= log.water.source %></p>
+                  <p><%= log.water.country %></p>
+                  <p>PH: <%= log.water.ph %></p>
                 </div>
               </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
