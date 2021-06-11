@@ -31,6 +31,13 @@ h3 {
   letter-spacing: 3px;
 }
 
+h5 {
+  font-style: italic;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+
 p {
   font-weight: light;
   font-size: 12px;
@@ -41,4 +48,10 @@ p {
   font-weight: light;
   font-size: 20px;
   letter-spacing: 1px;
+}
+
+.vertical-text-right {
+  font-size: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }

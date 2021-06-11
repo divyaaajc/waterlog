@@ -76,9 +76,12 @@
       <hr>
     <% end %>
   </div>
-  <div class="col-12 col-sm-6">
+
+  <p class="spacer-transparent">p</p>
+
+  <div class="card-wide">
     <div class="bg-white rounded p-3">
-      <h3 type="button" role="button" data-toggle="collapse" data-target="#review-form">WHAT DID YOU THINK</h3>
+      <h5 type="button" role="button" data-toggle="collapse" data-target="#review-form">What did you think?</h5>
       <div class="collapse" id="review-form">
         <% if user_signed_in? %>
             <%= simple_form_for [@water, @review] do |f| %>
