@@ -33,6 +33,15 @@ color: black;
   flex-basis: unset;
 }
 
+.burger-dropdown {
+  transition: all .1s ease-in-out;
+}
+
+.burger-dropdown:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 // .navbar-waterlog {
 //   display: flex;
 //   justify-content: space-between;
