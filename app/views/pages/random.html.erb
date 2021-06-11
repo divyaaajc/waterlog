@@ -2,8 +2,8 @@
 
   <h1 class="mt-5 mb-5"><%= @water.name.upcase %></h1>
 
-  <button onclick=location=URL>Looking for another random water</button>
-  
+  <button class="submit-button-random" onclick=location=URL>SHUFFLE WATER</button>
+
   <div  class="card-wide d-flex flex-column">
     <div class="card-wide-top-container">
       <div class="card-wide-info-container">
@@ -28,7 +28,7 @@
 
   <p id="description" class="mt-5" data-text="<%= @water.description %>"><%= @water.description.truncate(400) %> <%= link_to "Read more", "", id:"read-more"%></p>
   <%= link_to "Read less", '', class: 'd-none', id: 'read-less' %>
-  
+
 
   <hr class="my-5">
   <div class="col-12 col-sm-6">
