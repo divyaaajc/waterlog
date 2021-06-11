@@ -29,7 +29,7 @@
 
   <hr class="my-5">
   <div class="col-12 col-sm-6">
-    <h1>WHAT PEOPLE ARE SAYING</h1>
+    <h1 >WHAT PEOPLE ARE SAYING</h1>
     <% if @water.reviews.empty? %>
       <small><em class="text-muted">Be the first one to review this water</em></small>
     <% end %>
@@ -77,16 +77,18 @@
   </div>
   <div class="col-12 col-sm-6">
     <div class="bg-white rounded p-3">
-      <h5>WHAT DID YOU THINK</h5>
-      <% if user_signed_in? %>
-        <%= simple_form_for [@water, @review] do |f| %>
-          <%= f.input :content, placeholder: 'Add your review here...' %>
-          <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
-          <%= f.submit class:'btn btn-flat' %>
+      <h5 type="button" role="button" data-toggle="collapse" data-target="#review-form">WHAT DID YOU THINK</h5>
+      <div class="collapse" id="review-form">
+        <% if user_signed_in? %>
+            <%= simple_form_for [@water, @review] do |f| %>
+              <%= f.input :content, placeholder: 'Add your review here...' %>
+              <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
+              <%= f.submit class:'btn btn-flat' %>
+            <% end %>
+        <% else %>
+            <%= link_to 'Log in', new_user_session_path %> to leave a review
         <% end %>
-      <% else %>
-        <%= link_to 'Log in', new_user_session_path %> to leave a review
-      <% end %>
+      </div>
     </div>
   </div>
 
