@@ -25,7 +25,7 @@ const readCollapse = () => {
         description.innerHTML = description.dataset.text
         description.setAttribute("data-text", text)
         hide.classList.add('d-none')
-        description.scrollIntoView()
+        // description.scrollIntoView()
         link = document.querySelector('#read-more')
         readMore()
       })
