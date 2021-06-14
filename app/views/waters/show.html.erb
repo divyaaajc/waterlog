@@ -7,9 +7,9 @@
       <div class="card-wide-info-container">
         <div class="card-wide-info">
           <p class="small-text-show"><%= @water.brand %></p>
-          <p class="small-text-show">PH: <%= @water.ph %></p>
           <p class="small-text-show"><%= @water.source %></p>
           <p class="small-text-show"><%= @water.country %></p>
+          <p class="small-text-show">PH: <%= @water.ph %></p>
         </div>
       </div>
       <div class="card-wide-image-container">
@@ -24,7 +24,7 @@
   </div>
 
 
-  <p id="description" class="mt-5" data-text="<%= @water.description %>"><%= @water.description.truncate(400) %> <%= link_to "Read more", "", id:"read-more"%></p>
+  <p id="description" class="mt-5 description" data-text="<%= @water.description %>"><%= @water.description.truncate(400) %> <%= link_to "Read more", "", id:"read-more"%></p>
   <%= link_to "Read less", '', class: 'd-none', id: 'read-less' %>
 
 
