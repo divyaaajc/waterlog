@@ -5,7 +5,7 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/edmundparsons/ckpwebkhw5gms17me7pz91apg'
+    style: 'mapbox://styles/edmundparsons/ckpwebkhw5gms17me7pz91apg', zoom: 1.5
   });
 };
 
@@ -34,14 +34,47 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 6, duration: 500 });
 };
 
+const highlightCountries = (map, countries) => {
+  map.on('load', function() {
+    map.addLayer(
+      {
+        id: 'country-boundaries',
+        source: {
+          type: 'vector',
+          url: 'mapbox://mapbox.country-boundaries-v1',
+        },
+        'source-layer': 'country_boundaries',
+        type: 'fill',
+        paint: {
+          'fill-color': '#eabb5d',
+          'fill-opacity': 0.4,
+        },
+      },
+      'country-label'
+    );
+  
+    let filteredCountries = ["in", "iso_3166_1_alpha_3"]
+    filteredCountries.push(countries)
+  
+    map.setFilter('country-boundaries', filteredCountries.flat());
+  });
+}
+
 const initMapbox = () => {
   setTimeout(() => {
     const mapElement = document.getElementById('map');
     if (mapElement) {
       const map = buildMap(mapElement);
-      const markers = JSON.parse(mapElement.dataset.markers);
-      addMarkersToMap(map, markers);
-      fitMapToMarkers(map, markers);    }
+      if (mapElement.dataset.markers) {
+        const markers = JSON.parse(mapElement.dataset.markers);
+        addMarkersToMap(map, markers);
+        fitMapToMarkers(map, markers);
+      }
+      if (mapElement.dataset.countries) {
+        const countries = JSON.parse(mapElement.dataset.countries);
+        highlightCountries(map, countries);
+      }
+    }
   }, 200);
 };
 
