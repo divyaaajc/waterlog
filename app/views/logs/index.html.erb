@@ -27,16 +27,15 @@
                 <div class="card-bottle-tall-image-container">
                   <%= image_tag log.water.photo %>
                 </div>
-              </div>
-              <div class="card-bottle-info">
-                <div class="card-bottle-info-container">
-                  <p><%= log.water.name %></p>
-                  <p><%= log.water.brand %></p>
-                  <p><%= log.water.source %></p>
-                  <p><%= log.water.country %></p>
-                  <p>PH: <%= log.water.ph %></p>
+                <div class="card-bottle-info">
+                  <div class="card-bottle-info-container">
+                    <p><%= log.water.name %></p>
+                    <p><%= log.water.brand %></p>
+                    <p><%= log.water.source %></p>
+                    <p><%= log.water.country %></p>
+                    <p>PH: <%= log.water.ph %></p>
+                  </div>
                 </div>
-              </div>
             <% end %>
           </div>
         <% end %>
