@@ -1,28 +1,73 @@
 <div class="content2-div">
-  <h1 class="mb-4">YOUR WATERS</h1>
+  <h1 class="mb-6">YOUR WATERS</h1>
 
-  <div class="mt-3" id="waters">
-    <div class="row">
-      <% @logs.each do |log| %>
-        <div class="col-12 col-sm-6 col-md-4 mb-5">
-          <%= link_to water_path(log.water) do  %>
-            <div class="card-bottle-tall">
-              <div class="card-bottle-tall-image-container">
-                <%= image_tag log.water.photo %>
-              </div>
-              <div class="card-bottle-info">
-                <div class="card-bottle-info-container">
-                  <p><%= log.water.name %></p>
-                  <p><%= log.water.brand %></p>
-                  <p><%= log.water.source %></p>
-                  <p><%= log.water.country %></p>
-                  <p>PH: <%= log.water.ph %></p>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <%= link_to logs_path(all: true) do %> 
+      <li class="nav-item" role="presentation">
+        <button class="nav-link <%='active' unless @reviewed %>" id="tried-tab" data-bs-toggle="tab" data-bs-target="#tried" type="button" role="tab" aria-controls="tried" aria-selected="true">Tried</button>
+      </li>
+    <% end %>
+    <%= link_to logs_path(reviewed: true) do %>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link <%='active' if @reviewed %>" id="reviewed-tab" data-bs-toggle="tab" data-bs-target="#reviewed" type="button" role="tab" aria-controls="reviewed" aria-selected="false">Reviewed</button>
+      </li>
+    <% end %>
+  </ul>
+
+  <% unless @reviewed %>
+      <div class="mt-3" id="waters">
+        <div class="row">
+          <% @logs.each do |log| %>
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+              <%= link_to water_path(log.water) do  %>
+                <div class="card-bottle-tall">
+                  <div class="card-bottle-tall-image-container">
+                    <%= image_tag log.water.photo %>
+                  </div>
+                  <div class="card-bottle-info">
+                    <div class="card-bottle-info-container">
+                      <p><%= log.water.name %></p>
+                      <p><%= log.water.brand %></p>
+                      <p><%= log.water.source %></p>
+                      <p><%= log.water.country %></p>
+                      <p>PH: <%= log.water.ph %></p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              <% end %>
             </div>
           <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
-  </div>
+    <% end %>
+    <% if @reviewed %>
+      <% unless current_user.reviews.empty? %>
+        <div class="mt-3" id="waters">
+          <div class="row">
+            <% @logs.each do |log| %>
+              <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <%= link_to water_path(log.water) do  %>
+                  <div class="card-bottle-tall">
+                    <div class="card-bottle-tall-image-container">
+                      <%= image_tag log.water.photo %>
+                    </div>
+                    <div class="card-bottle-info">
+                      <div class="card-bottle-info-container">
+                        <p><%= log.water.name %></p>
+                        <p><%= log.water.brand %></p>
+                        <p><%= log.water.source %></p>
+                        <p><%= log.water.country %></p>
+                        <p>PH: <%= log.water.ph %></p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
 </div>
