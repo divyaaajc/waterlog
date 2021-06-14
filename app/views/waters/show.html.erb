@@ -35,13 +35,15 @@
       <small><em class="text-muted">Be the first one to review this water</em></small>
     <% end %>
     <% @water.reviews.each do |review| %>
-      <div>
+      <div class="content-2 mt-3">
         <% review.rating.times do %>
-          <i class="fas fa-star star-yellow"></i>
+          <i class="fas fa-star star-yellow stars"></i>
         <% end %>
         <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-        <p class="mb-0"><%= review.user.username %></p>
-        <p class="mb-0"><%= review.content %></p>
+        <div class="mt-3 review" style="overflow: hidden;">
+            <p class="very-small-text-review-name font-weight-bold" style="float: left;"><%= review.user.username %> </p>
+           <p class="very-small-text-review" style="display:inline:float:right" > says ... <%= review.content %></p>
+        </div>
       </div>
       <% if review.user == current_user %>
         <div>
