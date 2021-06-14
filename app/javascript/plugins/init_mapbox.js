@@ -5,16 +5,27 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/edmundparsons/ckpwebkhw5gms17me7pz91apg'
   });
 };
 
 const addMarkersToMap = (map, markers) => {
-  markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-  });
+ markers.forEach((marker) => {
+  const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+
+  // Create a HTML element for your custom marker
+  const element = document.createElement('div');
+  element.className = 'marker';
+  element.style.backgroundImage = `url(https://cdn1.iconfinder.com/data/icons/user-interface-16x16-vol-1/16/drop-512.png)`;
+  element.style.backgroundSize = 'contain';
+  element.style.width = '30px';
+  element.style.height = '30px';
+
+  // Pass the element as an argument to the new marker
+  new mapboxgl.Marker(element)
+    .setLngLat([marker.lng, marker.lat])
+    .addTo(map);
+});
 };
 
 const fitMapToMarkers = (map, markers) => {
