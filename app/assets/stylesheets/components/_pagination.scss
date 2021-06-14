@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
  }
- 
+
   .pagination a, .pagination span {
     padding: 0.2em 0.3em; }
   .pagination .disabled {
@@ -25,10 +25,14 @@
     -webkit-border-radius: 1em;
     border-radius: 1em;
     align-items: center;
-    // text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; 
+    // text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
   }
   .pagination a {
     text-decoration: none;
     color: black; }
     .pagination a:hover, .pagination a:focus {
       text-decoration: underline; }
+
+  .pagination-div {
+    width: 30px;
+  }
