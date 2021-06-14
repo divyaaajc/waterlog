@@ -25,9 +25,11 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers"
 import { initMapbox } from '../plugins/init_mapbox';
 import { readCollapse } from '../plugins/init_readmore';
 import { initStarRating } from '../plugins/init_star_rating';
+import { reviewSlide } from '../plugins/init_review_slide';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   readCollapse();
   initStarRating();
+  // reviewSlide();
 });
