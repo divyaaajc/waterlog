@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     @review.water = @water
     @review.user = current_user
     if @review.save
-      redirect_to water_path(@water)
+      redirect_to water_path(@water), notice: 'Your review was successfully added!'
     else
       render 'waters/show'
     end
