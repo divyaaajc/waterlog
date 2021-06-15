@@ -4,6 +4,10 @@ class PagesController < ApplicationController
 
   def home
     @waters = Water.all.sample(9)
+    # added for sake of Demo -- for Sommelier section
+    @picked_water_1 = Water.find_by('name ILIKE ?', 'foz%')
+    @picked_water_2 = Water.find_by('name ILIKE ?', 'icelandic%')
+    @picked_water_3 = Water.find_by('name ILIKE ?', 'lahuenco%')
   end
 
   def about

@@ -15,31 +15,165 @@
 </div>
 
 <div class="container">
-      <div class="mt-3" id="waters">
-        <div class="row">
-          <% @waters.each do |water| %>
-            <div class="col-12 col-sm-6 col-md-4 mb-5 pl-0">
-              <%= link_to water_path(water) do  %>
-                <div class="card-bottle-tall">
-                  <div class="card-bottle-tall-image-container">
-                    <%= image_tag water.photo %>
-                  </div>
-                  <div class="card-bottle-info">
-                    <div class="card-bottle-info-container">
-                      <p><%= water.name %></p>
-                      <p><%= water.brand %></p>
-                      <p><%= water.source %></p>
-                      <p><%= water.country %></p>
-                      <p>PH:<%= water.ph %></p>
-                    </div>
+  <div class="row homepage-sommelier-row pb-2">
+    <div class="d-flex justify-content-start">
+      <div class="d-flex align-items-center sommelier-image-container">
+        <%= image_tag "John-Berryman.jpg", class: "avatar-large", alt: "picture of sommelier" %>
+      </div>
+      <div class="sommelier-info-container">
+        <h2>Our Sommelier's Top Picks this week</h2>
+        <h3><strong>"</strong></h3><p>The waters for this week were grouped around the theme of alkalinity. Although usually associated
+        with car batteries and ammonia, high PH in natural mineral waters contributes a distinctive tartness and
+        dry mouthfeel that can be a welcome respite from the glut of mild, middle-PH waters on the market.
+        <br>
+        Try these waters with oily fish, samphire, or bitter seasonal greens. Foz paired beautifully with smoked Eel,
+        Icelandic stood up against the intense salinity of samphire and grilled Bream, but would also go brilliantly with
+        meatier fish, Bottarga, or any kind of roe. Lahuenco was a treat with buttered Cavolo Nero, and would also handsomely accompany Pak Choi.
+        </p>
+        <div class="info-footer row d-flex pr-4 justify-content-between">
+          <p>-- Devon Ashberry - Lead Somm at WaterLog<p>
+          <h3><strong>"</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="hr-container pr-2">
+    <hr>
+  </div>
+
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="10000">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row d-flex justify-content-between align-items-center mt-5">
+          <div class="sommeliers-comments-container col-sm-6 col-md-8 mt-3 pl-5 mb-5">
+            <p>"Foz is quite a remarkable water. Naturally alkaline at a PH of 10.1, the Brazilian pick for this week
+            accommodates a rare constellation of different minerals that make it highly conductive. That latent
+            electrical energy is a joy to experience, and locks your subtle body into an aligned spiritual hum.
+            Try it yourself - I'm not joking!"</p>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-5 pl-0">
+            <%= link_to water_path(@picked_water_1) do  %>
+              <div class="card-bottle-tall">
+                <div class="card-bottle-tall-image-container">
+                  <%= image_tag @picked_water_1.photo %>
+                </div>
+                <div class="card-bottle-info">
+                  <div class="card-bottle-info-container">
+                    <p><%= @picked_water_1.name %></p>
+                    <p><%= @picked_water_1.brand %></p>
+                    <p><%= @picked_water_1.source %></p>
+                    <p><%= @picked_water_1.country %></p>
+                    <p>PH:<%= @picked_water_1.ph %></p>
                   </div>
                 </div>
-              <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-between align-items-center mt-5">
+          <div class="sommeliers-comments-container col-sm-6 col-md-8 mt-3 pl-5 mb-5">
+            <p>"The water of Ölfus spring, where Icelandic Glacial are based, arrives at the earth's
+            surface having percolated, as rainfall and snowmelt, through endless layers of porous, igneous
+          rock. That 5,000-year-long mineral-exposure yields a fantastic, and dare I say it, 'smoky' result.
+        To top it off, the team at Icelandic are among the most sustainable in the industry."</p>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-5 pl-0">
+            <%= link_to water_path(@picked_water_2) do  %>
+              <div class="card-bottle-tall">
+                <div class="card-bottle-tall-image-container">
+                  <%= image_tag @picked_water_2.photo %>
+                </div>
+                <div class="card-bottle-info">
+                  <div class="card-bottle-info-container">
+                    <p><%= @picked_water_2.name %></p>
+                    <p><%= @picked_water_2.brand %></p>
+                    <p><%= @picked_water_2.source %></p>
+                    <p><%= @picked_water_2.country %></p>
+                    <p>PH:<%= @picked_water_2.ph %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-between align-items-center mt-5">
+          <div class="sommeliers-comments-container col-sm-6 col-md-8 mt-3 pl-5 mb-5">
+            <p>"Soft and uniquely tannic, Lahuenco, like Foz, is drawn from a volcanic terroir. Unlike Foz, however, its water is extracted from the ground
+            at a temperature of 21°. In Mapuche, 'lahuenco' means something like 'medicinal water', and it is this volcanic minerality
+          and high natural temperature that no doubt have contributed such a reputation."</p>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 mb-5 pl-0">
+            <%= link_to water_path(@picked_water_3) do  %>
+              <div class="card-bottle-tall">
+                <div class="card-bottle-tall-image-container">
+                  <%= image_tag @picked_water_3.photo %>
+                </div>
+                <div class="card-bottle-info">
+                  <div class="card-bottle-info-container">
+                    <p><%= @picked_water_3.name %></p>
+                    <p><%= @picked_water_3.brand %></p>
+                    <p><%= @picked_water_3.source %></p>
+                    <p><%= @picked_water_3.country %></p>
+                    <p>PH:<%= @picked_water_3.ph %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+
+  <div class="hr-container pr-2">
+    <hr>
+  </div>
+  <div class="mt-3" id="waters">
+    <div class="row">
+      <% @waters.each do |water| %>
+        <div class="col-12 col-sm-6 col-md-4 mb-5 pl-0">
+          <%= link_to water_path(water) do  %>
+            <div class="card-bottle-tall">
+              <div class="card-bottle-tall-image-container">
+                <%= image_tag water.photo %>
+              </div>
+              <div class="card-bottle-info">
+                <div class="card-bottle-info-container">
+                  <p><%= water.name %></p>
+                  <p><%= water.brand %></p>
+                  <p><%= water.source %></p>
+                  <p><%= water.country %></p>
+                  <p>PH:<%= water.ph %></p>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
-      </div>
+      <% end %>
+    </div>
   </div>
+</div>
 
 <spacer class="spacer-transparent" type="horizontal" width="100" height="100"> ♢ </spacer>
 
