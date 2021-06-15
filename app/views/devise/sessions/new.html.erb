@@ -33,7 +33,7 @@
       <%= render "devise/shared/links" %>
     </div>
 </div>
-
+<% flash.now[:alert] = params[:flash_notice] if params[:flash_notice] %>
 <div class="spacer-transparent">
       <p>o</p>
 </div>
