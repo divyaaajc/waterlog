@@ -12,6 +12,7 @@ class WatersController < ApplicationController
   def show
     @water = Water.find(params[:id])
     @review = Review.new
+    @reviewed = user_reviewed?
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = [
       {
@@ -30,5 +31,14 @@ class WatersController < ApplicationController
     else
       flash.alert = "You have already tried this water"
     end
+  end
+
+  def user_reviewed?
+    @user = current_user
+    @water = Water.find(params[:id])
+    @intersection = @user.reviews & @water.reviews
+    return false if @intersection.empty?
+
+    return true
   end
 end
