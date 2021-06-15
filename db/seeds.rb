@@ -1,8 +1,8 @@
 require 'open-uri'
 require 'nokogiri'
 
-# Water.destroy_all
-# User.destroy_all
+Water.destroy_all
+User.destroy_all
 
 puts "Creating users..."
 
@@ -46,6 +46,7 @@ urls.each do |url|
 
   html_doc.search('.tbl-sec-src').each do |element|
     new_water.country = element.search("td:contains('Country') + td").text.strip
+    new_water.country = "Colombia" if new_water.country == "Colomcia"
     new_water.source =  element.search("td:contains('Place') + td").text.strip
     new_water.brand = element.search("td:contains('Company') + td").text.strip
   end
@@ -66,6 +67,13 @@ urls.each do |url|
   # p new_water.name
   # p new_water.description
   new_water.save
+end
+ 
+# get all waters where lon/lat was not set by "source" and set by "country"
+Water.where(longitude: [nil, ""]).each do |water|
+  latitude = Geocoder.search(water.country).first.coordinates.first
+  longitude = Geocoder.search(water.country).first.coordinates.last
+  water.update(latitude: latitude, longitude: longitude)
 end
 
 puts "#{Water.count} waters saved!!!"
