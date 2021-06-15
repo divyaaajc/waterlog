@@ -1,7 +1,11 @@
 <div class="index-container">
   <div class="container">
     <div class="row justify-content-start mb-5 mt-3">
-      <h1 class="mt-5 mb-5">"<%= params.dig(:search, :query) %>"</h1>
+      <% if params[:query].present? %>
+        <p></p>
+      <% else %>
+        <h1 class="mt-5 mb-5">"<%= params.dig(:search, :query) %>"</h1>
+      <% end %>
     </div>
     <div class="mt-3" id="waters">
       <div class="row">
