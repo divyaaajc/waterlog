@@ -1,16 +1,17 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:destroy, :edit, :update]
-  
+
   def create
     @review = Review.new(strong_params)
     @water = Water.find(params[:water_id])
     @review.water = @water
     @review.user = current_user
     if @review.save
-      redirect_to water_path(@water)
+      redirect_to water_path(@water), notice: 'Your review was successfully added!'
     else
       render 'waters/show'
     end
+    Log.create(user: current_user, water: @water)
   end
 
   def update
@@ -23,7 +24,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy
-    redirect_to water_path(@review.water),  notice: 'Review was successfully deleted' #look into
+    redirect_to water_path(@review.water), notice: 'Review was successfully deleted'
   end
 
   private

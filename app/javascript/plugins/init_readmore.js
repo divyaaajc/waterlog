@@ -6,8 +6,6 @@ const readCollapse = () => {
   const readMore = () => {
     if (description && link && hide) {
       link.addEventListener('click', (event) => {
-        console.log(event)
-        console.log(event.currentTarget)
         event.preventDefault()
         const text = description.innerHTML
         description.innerHTML = description.dataset.text
@@ -25,7 +23,7 @@ const readCollapse = () => {
         description.innerHTML = description.dataset.text
         description.setAttribute("data-text", text)
         hide.classList.add('d-none')
-        // description.scrollIntoView()
+        description.scrollIntoView({block: "center"})
         link = document.querySelector('#read-more')
         readMore()
       })
