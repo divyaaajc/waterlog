@@ -47,14 +47,11 @@
   <%= link_to "Read less", '', class: 'd-none', id: 'read-less' %>
 
   <hr class="my-5">
-  <div class="col-12 col-sm-6">
+  <div class="col-12 col-sm-6 pl-0">
     <% if @water.reviews.empty? %>
       <h3>LEAVE THE FIRST REVIEW</h3>
     <% else %>
       <h3>WHAT PEOPLE ARE SAYING</h3>
-    <% end %>
-    <% if @water.reviews.empty? %>
-      <small><em class="text-muted">Be the first one to review this water</em></small>
     <% end %>
     <% @water.reviews.each do |review| %>
       <div class="content-2 mt-3">
