@@ -12,7 +12,7 @@ class WatersController < ApplicationController
   def show
     @water = Water.find(params[:id])
     @review = Review.new
-    @reviewed = user_reviewed?
+    @reviewed = user_reviewed? if current_user
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = [
       {
@@ -27,9 +27,9 @@ class WatersController < ApplicationController
     @water = Water.find(params[:id])
     @log.water = @water
     if @log.save
-      flash.alert = "#{@water.name} has been successfully added to your waters... See it in your waters"
+      flash.notice = "#{@water.name} has been successfully added to your waters... See it in Your Waters"
     else
-      flash.alert = "You have already tried this water"
+      flash.notice = "You have already tried this water"
     end
   end
 
