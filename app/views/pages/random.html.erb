@@ -1,9 +1,9 @@
 <div class="content2-div">
 
-  <h1 class="mt-5 mb-5"><%= @water.name.upcase %></h1>
+  <h1 class="mt-3 mb-5"><%= @water.name.upcase %></h1>
 
   <button class="submit-button-random" onclick=location=URL>SHUFFLE WATER</button>
-
+  
   <div  class="card-wide d-flex flex-column">
     <div class="card-wide-top-container">
       <div class="card-wide-info-container">
@@ -20,38 +20,48 @@
     </div>
     <div class="card-wide-footer" data-controller="logs">
       <div class="card-wide-footer-info-container">
-        <% if @reviewed %>
-          <h3 class="mb-0">Nice work! You've tried this water</h3>
-        <% elsif current_user.waters.include? @water%>
-          <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?' data-action="click->logs#showReview" remote="true">You've tried this water!...<small>Click to leave a review</small></h3>
-        <% else %>
-          <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?'><%= link_to "I've tried this water", add_water_to_log_water_path(@water), method: :post, remote: true, data: { action: "ajax:success->logs#showReview" } %></h5>
-        <% end %>
-        <div class="collapse bg-white mt-3" id="review-form">
-          <% if user_signed_in? %>
+        <% if user_signed_in? %>
+          <% if @reviewed %>
+            <h3 class="mb-0">Nice work! You've tried this water</h3>
+            <% elsif current_user.waters.include? @water%>
+              <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?' data-action="click->logs#showReview">You've tried this water!...<small id="review-slide" type="button" role="button" data-toggle="collapse" data-target="#review-form">Click to leave a review</small></h3>
+          <% else %>
+              <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?'><%= link_to "I've tried this water", add_water_to_log_water_path(@water), method: :post, remote: true, data: { action: "ajax:success->logs#showReview" } %></h5>
+          <% end %>
+          <div class="collapse bg-white mt-3" id="review-form">
             <%= simple_form_for [@water, @review] do |f| %>
               <%= f.input :content, placeholder: 'Add your review here...' %>
               <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
               <%= f.submit class:'btn btn-flat pl-0' %>
             <% end %>
-          <% else %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <i class="fas fa-check-circle"></i> <%= @water.name %> has been successfully added to your waters... See it in <%=link_to "Your Waters", logs_path, class: 'alert-link'%>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        <% else %>
+          <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?' data-action="click->logs#showReview" remote="true">I've tried this water!</h3>
+          <div class="collapse bg-white mt-3" id="review-form">
             <%= link_to 'Log in', new_user_session_path %> to leave a review
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 
-  <p id="description" class="mt-5" data-text="<%= @water.description %>"><%= @water.description.truncate(400) %> <%= link_to "Read more", "", id:"read-more"%></p>
-  <%= link_to "Read less", '', class: 'd-none', id: 'read-less' %>
+  <p id="description" class="mt-5 description" data-text="<%= @water.description %>"><%= @water.description.truncate(400) %> <br> <%= link_to "Read more", "", id:"read-more"%></p>
+  <p><%= link_to "Read less", '', class: 'd-none', id: 'read-less' %></p>
 
-
-<hr class="my-5">
+  <hr class="my-5">
   <div class="col-12 col-sm-6 pl-0">
     <% if @water.reviews.empty? %>
+      <em class="text-muted">Be the first one to review this water</em>
       <h3>LEAVE THE FIRST REVIEW</h3>
     <% else %>
       <h3>WHAT PEOPLE ARE SAYING</h3>
+
     <% end %>
     <% @water.reviews.each do |review| %>
       <div class="content-2 mt-3">
@@ -98,7 +108,7 @@
     <% end %>
   </div>
 
-  <p class="spacer-transparent">p</p>
+  <p class="spacer-transparent"></p>
 
   <div class="map-container">
     <h3 class="mb-2">TERROIR</h3>
@@ -109,3 +119,33 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+</div>
+
+<!-- <div class="right-cta-column">
+  <p style="writing-mode: vertical-rl">YOUR WATERS</p>
+</div>
+
+<div class="right-column">
+  <p>sq</p>
+</div>
+
+<div class="left-column">
+  <p>sq</p>
+</div> -->
+<% if params[:scroll].present? %>
+  <script>
+    document.addEventListener('turbolinks:load', () => {
+      if (localStorage['scroll']) {
+        window.scrollTo({ top: localStorage['scroll'] })
+      }
+    })
+  </script>
+<% end %>
+
+<script>
+  document.addEventListener('turbolinks:load', () => {
+    window.addEventListener('scroll', () => {
+      localStorage['scroll'] = window.scrollY;
+    });
+  });
+</script>
