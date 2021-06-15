@@ -12,7 +12,16 @@
         <% @waters.each do |water| %>
           <div class="col-12 col-sm-6 col-md-4 mb-5 pl-0">
             <%= link_to water_path(water) do  %>
-              <div class="card-bottle-tall">
+              <div class="card-bottle-tall relative-card">
+                <% if water.highly_rated %>
+                <p class="absolute-tag">Highly Rated</p>
+                <% end %>
+                <% if water.rare %>
+                <p class="absolute-tag">Rare</p>
+                <% end %>
+                <% if water.popular %>
+                <p class="absolute-tag">Popular</p>
+                <% end %>
                 <div class="card-bottle-tall-image-container">
                   <%= image_tag water.photo %>
                 </div>
