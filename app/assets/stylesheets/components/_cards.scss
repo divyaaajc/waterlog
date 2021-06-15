@@ -87,10 +87,11 @@
     justify-content: flex-start;
     background-color: white;
     border-top: solid 1px black;
-    height: 70px;
+    min-height: 70px;
     width: 100%;
     .card-wide-footer-info-container {
-      margin-left: 30px;
+      margin: 30px;
+      width: 100%;
     }
   }
 }
