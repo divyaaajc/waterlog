@@ -42,7 +42,7 @@
         <% else %>
           <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?' data-action="click->logs#showReview" remote="true">I've tried this water!</h3>
           <div class="collapse bg-white mt-3" id="review-form">
-            <%= link_to 'Sign up', user_session_path %> to leave a review
+            <%= link_to 'Sign up', new_user_registration_path %> to leave a review
           </div>
         <% end %>
       </div>
@@ -54,12 +54,11 @@
 
   <hr class="my-5">
   <div class="col-12 col-sm-6 pl-0">
-    <% if @water.reviews.empty? %>
-      <p></p>
-    <% else %>
-      <h3>WHAT PEOPLE ARE SAYING</h3>
-
-    <% end %>
+      <% if @water.reviews.empty? %>
+        <p></p>
+      <% else %>
+        <h3>WHAT PEOPLE ARE SAYING</h3>
+      <% end %>
     <% @water.reviews.each do |review| %>
       <div class="content-2 mt-3">
         <% review.rating.times do %>
