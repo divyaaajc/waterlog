@@ -35,6 +35,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'geocoder'
 gem "normalize_country"
+gem 'rails_admin', '~> 2.0'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
