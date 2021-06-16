@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "Waterlog"
+meta_title: "Waterlog - Find, log and rate waters from all over the world"
+meta_description: "We wanted to create a community for water enthusiasts."
+meta_image: "group-59.png" # should exist in `app/assets/images/`
