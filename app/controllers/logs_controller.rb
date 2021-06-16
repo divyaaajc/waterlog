@@ -3,11 +3,17 @@ class LogsController < ApplicationController
     @reviewed = params[:reviewed]
     @waters = params[:all]
     @logs = Log.where(user_id: current_user.id)
-    @logs = current_user.reviews if @reviewed
+    if @reviewed
+      @logs = current_user.reviews.map do |review|
+        review.water.logs.find_by(user: current_user)
+      end || []
+    end
+
     @countries = @logs.map do |log|
       country = Geocoder.search([log.water.latitude, log.water.longitude]).first.data["address"]["country"]
       NormalizeCountry(country, to: :alpha3)
     end
+    
   end
 
   def destroy
