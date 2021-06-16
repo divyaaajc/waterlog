@@ -23,13 +23,13 @@
         <%= render 'shared/flashes' %>
 
         <%= yield %>
-        
+
         <%= link_to user_signed_in? ? logs_path : new_user_session_path(flash_notice: "sign-in" ), class:"vertical-text-right", style:"writing-mode: vertical-rl" do %>
           <div class="right-cta-column" style="z-index: 99;">
             <div class="vertical-offset" style="height: calc(50vh - 72px);">
             </div>
             YOUR WATERS
-          </div>  
+          </div>
         <% end %>
 
         <div class="right-column">
@@ -52,7 +52,6 @@
         <div class="footer">
           <div class="footer-links">
             <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
           </div>
           <div class="footer-copyright">
             Made with <i class="fas fa-tint"></i> at WaterLog
