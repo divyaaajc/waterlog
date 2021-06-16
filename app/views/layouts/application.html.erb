@@ -23,11 +23,14 @@
         <%= render 'shared/flashes' %>
 
         <%= yield %>
-
-        <div class="right-cta-column">
-          <p class="vertical-text-right" style="writing-mode: vertical-rl" YOUR WATERS> <%=link_to "Your Waters", logs_path %> </p>
-
-        </div>
+        
+        <%= link_to user_signed_in? ? logs_path : new_user_session_path(flash_notice: "sign-in" ), class:"vertical-text-right", style:"writing-mode: vertical-rl" do %>
+          <div class="right-cta-column" style="z-index: 99;">
+            <div class="vertical-offset" style="height: calc(50vh - 72px);">
+            </div>
+            YOUR WATERS
+          </div>  
+        <% end %>
 
         <div class="right-column">
           <p>sq</p>
