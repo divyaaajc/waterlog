@@ -1,8 +1,8 @@
 <div class="content2-div">
   <h1 class="mb-6">YOUR WATERS</h1>
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <ul class="nav nav-tabs tab-style" id="myTab" role="tablist">
     <%= link_to logs_path(all: true) do %>
-      <li class="nav-item" role="presentation">
+      <li class="nav-item tab-style" role="presentation">
         <button class="nav-link <%='active' unless @reviewed %>" id="tried-tab" data-bs-toggle="tab" data-bs-target="#tried" type="button" role="tab" aria-controls="tried" aria-selected="true">Tried</button>
       </li>
     <% end %>
