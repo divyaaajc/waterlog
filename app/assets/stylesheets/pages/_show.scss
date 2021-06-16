@@ -1,0 +1,17 @@
+a#read-more {
+  color: grey;
+  transition: 0.5s;
+}
+
+a#read-less {
+  color: grey;
+  transition: 0.5s;
+}
+
+a#read-less:hover {
+  color: black;
+}
+
+a#read-more:hover {
+  color: black;
+}
