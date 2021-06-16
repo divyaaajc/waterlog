@@ -22,6 +22,12 @@
       <div class="row">
         <% @logs.each do |log| %>
           <div class="col-12 col-sm-6 col-md-4 mb-5">
+            <div class="card-bottle-tall">
+              <%= link_to log_path(log), method: :delete, data: { confirm: "Are you sure you would like to delete #{log.water.name}?" } do %>
+                <button type="link" class="close m-2" aria-label="Close" >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              <% end %>
             <%= link_to water_path(log.water) do %>
               <div class="card-bottle-tall relative-card">
                 <% if log.water.highly_rated %>
@@ -60,6 +66,12 @@
       <div class="row">
         <% @logs.each do |log| %>
           <div class="col-12 col-sm-6 col-md-4 mb-5">
+            <div class="card-bottle-tall">
+              <%= link_to log_path(log), method: :delete, data: { confirm: "Are you sure you would like to delete #{log.water.name}?" } do %>
+                <button type="link" class="close m-2" aria-label="Close" >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              <% end %>
             <%= link_to water_path(log.water) do  %>
               <div class="card-bottle-tall relative-card">
                 <% if log.water.highly_rated %>
