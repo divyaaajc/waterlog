@@ -33,7 +33,7 @@
             <% elsif current_user.waters.include? @water%>
               <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?' data-action="click->logs#showReview"><small id="review-slide" type="button" role="button" data-toggle="collapse" data-target="#review-form">Click to leave another review</small></h3>
           <% else %>
-              <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?'><%= link_to "I've tried this water", add_water_to_log_water_path(@water), method: :post, remote: true, data: { action: "ajax:success->logs#showReview" } %></h5>
+              <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?'><%= link_to "Click here to log this water", add_water_to_log_water_path(@water), method: :post, remote: true, data: { action: "ajax:success->logs#showReview" } %></h5>
           <% end %>
           <div class="collapse bg-white mt-3" id="review-form">
             <%= simple_form_for [@water, @review] do |f| %>
