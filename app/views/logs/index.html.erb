@@ -1,6 +1,5 @@
 <div class="content2-div">
   <h1 class="mb-6">YOUR WATERS</h1>
-
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <%= link_to logs_path(all: true) do %>
       <li class="nav-item" role="presentation">
@@ -13,7 +12,6 @@
       </li>
     <% end %>
   </ul>
-
   <% unless @reviewed %>
     <% if @logs.empty? %>
       <p class='mt-4'> You haven't tried any waters yet! </p>
@@ -22,14 +20,13 @@
       <div class="row">
         <% @logs.each do |log| %>
           <div class="col-12 col-sm-6 col-md-4 mb-5">
-            <div class="card-bottle-tall">
+            <div class="card-bottle-tall relative-card">
               <%= link_to log_path(log), method: :delete, data: { confirm: "Are you sure you would like to delete #{log.water.name}?" } do %>
                 <button type="link" class="close m-2" aria-label="Close" >
                   <span aria-hidden="true">&times;</span>
                 </button>
               <% end %>
-            <%= link_to water_path(log.water) do %>
-              <div class="card-bottle-tall relative-card">
+              <%= link_to water_path(log.water) do %>
                 <% if log.water.highly_rated %>
                 <p class="absolute-tag">Highly Rated</p>
                 <% end %>
@@ -48,11 +45,11 @@
                     <p><%= log.water.brand %></p>
                     <p><%= log.water.source %></p>
                     <p><%= log.water.country %></p>
-                    <p>PH: <%= log.water.ph %></p>
+                    <p>pH: <%= log.water.ph %></p>
                   </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>
@@ -66,14 +63,13 @@
       <div class="row">
         <% @logs.each do |log| %>
           <div class="col-12 col-sm-6 col-md-4 mb-5">
-            <div class="card-bottle-tall">
+            <div class="card-bottle-tall relative-card">
               <%= link_to log_path(log), method: :delete, data: { confirm: "Are you sure you would like to delete #{log.water.name}?" } do %>
                 <button type="link" class="close m-2" aria-label="Close" >
                   <span aria-hidden="true">&times;</span>
                 </button>
               <% end %>
-            <%= link_to water_path(log.water) do  %>
-              <div class="card-bottle-tall relative-card">
+              <%= link_to water_path(log.water) do  %>
                 <% if log.water.highly_rated %>
                 <p class="absolute-tag">Highly Rated</p>
                 <% end %>
@@ -92,17 +88,16 @@
                     <p><%= log.water.brand %></p>
                     <p><%= log.water.source %></p>
                     <p><%= log.water.country %></p>
-                    <p>PH: <%= log.water.ph %></p>
+                    <p>pH: <%= log.water.ph %></p>
                   </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>
     </div>
   <% end %>
-
   <div class="map-container">
     <h3 class="mb-2">SCRATCH MAP</h3>
       <p class="spacer-transparent">p</p>
