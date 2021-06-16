@@ -2,7 +2,7 @@
   <h1 class="mb-6">YOUR WATERS</h1>
 
   <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <%= link_to logs_path(all: true) do %> 
+    <%= link_to logs_path(all: true) do %>
       <li class="nav-item" role="presentation">
         <button class="nav-link <%='active' unless @reviewed %>" id="tried-tab" data-bs-toggle="tab" data-bs-target="#tried" type="button" role="tab" aria-controls="tried" aria-selected="true">Tried</button>
       </li>
@@ -28,7 +28,17 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               <% end %>
-              <%= link_to water_path(log.water) do  %>
+            <%= link_to water_path(log.water) do %>
+              <div class="card-bottle-tall relative-card">
+                <% if log.water.highly_rated %>
+                <p class="absolute-tag">Highly Rated</p>
+                <% end %>
+                <% if log.water.rare %>
+                <p class="absolute-tag">Rare</p>
+                <% end %>
+                <% if log.water.popular %>
+                <p class="absolute-tag">Popular</p>
+                <% end %>
                 <div class="card-bottle-tall-image-container">
                   <%= image_tag log.water.photo %>
                 </div>
@@ -62,7 +72,17 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               <% end %>
-              <%= link_to water_path(log.water) do  %>
+            <%= link_to water_path(log.water) do  %>
+              <div class="card-bottle-tall relative-card">
+                <% if log.water.highly_rated %>
+                <p class="absolute-tag">Highly Rated</p>
+                <% end %>
+                <% if log.water.rare %>
+                <p class="absolute-tag">Rare</p>
+                <% end %>
+                <% if log.water.popular %>
+                <p class="absolute-tag">Popular</p>
+                <% end %>
                 <div class="card-bottle-tall-image-container">
                   <%= image_tag log.water.photo %>
                 </div>

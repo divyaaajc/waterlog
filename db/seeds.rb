@@ -6,9 +6,11 @@ User.destroy_all
 
 puts "Creating users..."
 
-benjamin = User.create(email: "benj@test.com", password: "123456", username: "benkennedy")
-lisa = User.create(email: "lisa@test.com", password: "123456", username: "lisasimpson")
-jimmy = User.create(email: "jimmy@test.com", password: "123456", username: "jimmycat")
+benjamin = User.create(email: "benj@test.com", password: "123456", username: "benkennedy", admin: false)
+lisa = User.create(email: "lisa@test.com", password: "123456", username: "lisasimpson", admin: false)
+jimmy = User.create(email: "jimmy@test.com", password: "123456", username: "jimmycat", admin: false)
+admin = User.create(email: "admin@waterlog.com", password: "123456", username: "admin", admin: true)
+
 
 url = "http://www.finewaters.com/bottled-waters-of-the-world/"
 
