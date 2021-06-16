@@ -12,7 +12,16 @@
           <p class="small-text-show">PH: <%= @water.ph %></p>
         </div>
       </div>
-      <div class="card-wide-image-container">
+      <div class="card-wide-image-container relative-card">
+        <% if @water.highly_rated %>
+          <p class="absolute-tag">Highly Rated</p>
+        <% end %>
+        <% if @water.rare %>
+          <p class="absolute-tag">Rare</p>
+        <% end %>
+        <% if @water.popular %>
+          <p class="absolute-tag">Popular</p>
+        <% end %>
         <%= image_tag @water.photo, alttext: "Photo of #{@water.photo}" %>
       </div>
     </div>
@@ -145,3 +154,4 @@
     });
   });
 </script>
+
