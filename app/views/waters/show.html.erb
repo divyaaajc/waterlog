@@ -51,7 +51,7 @@
         <% else %>
           <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?' data-action="click->logs#showReview" remote="true">I've tried this water!</h3>
           <div class="collapse bg-white mt-3" id="review-form">
-            <%= link_to 'Sign up', new_user_registration_path %> to leave a review
+            <%= link_to 'Log in', new_user_session_path %> or <%= link_to 'Sign up', new_user_registration_path %> to leave a review
           </div>
         <% end %>
       </div>
