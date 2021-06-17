@@ -52,8 +52,13 @@
     </div>
   </div>
 
-  <p id="description" class="mt-5 description" data-text="<%= @water.description %>"><%= @water.description.truncate(400) %> <br> <%= link_to "Read more", "", id:"read-more"%></p>
-  <p><%= link_to "Read less", '', class: 'd-none', id: 'read-less' %></p>
+    <% if @water.description.chars.length > 300 %>
+      <p id="description" class="mt-5 description" data-text="<%= @water.description %>">
+      <%= @water.description.truncate(400) %> <br> <%= link_to "Read more", "", id:"read-more"%></p>
+      <p><%= link_to "Read less", '', class: 'd-none', id: 'read-less' %></p>
+    <% else %>
+      <p id="description" class="mt-5 description" ><%= @water.description %></p>
+    <% end %>
 
   <hr class="my-5">
   <div class="col-12 col-sm-6 pl-0">
