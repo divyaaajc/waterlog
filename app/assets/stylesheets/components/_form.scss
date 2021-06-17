@@ -24,7 +24,16 @@
 }
 
 .form-control {
-  border: black;
+  // border: black;
+  border-style: solid;
+  border-color: #e8e5e5;
+  border-width: 1px;
+}
+
+.form-control:focus {
+  border-style: solid;
+  border-color: #e8e5e5;
+  border-width: 1px;
 }
 
 // <%= simple_form_for @user do |f| %>
