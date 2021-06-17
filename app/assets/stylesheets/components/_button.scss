@@ -32,7 +32,10 @@
   transition: 0.5s;
 }
 
-
+.submit-button-random:hover {
+  background-color: #f2f9ff;
+  filter: brightness(80%);
+}
 
 .submit-button:hover {
   background-color: #f2f9ff;
