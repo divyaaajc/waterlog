@@ -27,7 +27,7 @@ class WatersController < ApplicationController
     @water = Water.find(params[:id])
     @log.water = @water
     if @log.save
-    #   flash.notice = "#{@water.name} has been successfully added to your waters... See it in Your Waters"
+      flash[:alert] = "#{@water.name} has been successfully added to your waters! See it in "
     else
       flash.notice = "You have already tried this water"
     end
