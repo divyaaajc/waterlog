@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Waterlog</title>
+    <title>WaterLog</title>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,7 +12,24 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
 
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
 
   </head>
 
@@ -23,13 +41,13 @@
         <%= render 'shared/flashes' %>
 
         <%= yield %>
-        
+
         <%= link_to user_signed_in? ? logs_path : new_user_session_path(flash_notice: "sign-in" ), class:"vertical-text-right", style:"writing-mode: vertical-rl" do %>
           <div class="right-cta-column" style="z-index: 99;">
             <div class="vertical-offset" style="height: calc(50vh - 72px);">
             </div>
             YOUR WATERS
-          </div>  
+          </div>
         <% end %>
 
         <div class="right-column">
@@ -51,8 +69,7 @@
 
         <div class="footer">
           <div class="footer-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/divyaaajc/waterlog" target="_blank"><i class="fab fa-github"></i></a>
           </div>
           <div class="footer-copyright">
             Made with <i class="fas fa-tint"></i> at WaterLog

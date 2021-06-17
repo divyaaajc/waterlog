@@ -2,6 +2,8 @@ require 'open-uri'
 require 'nokogiri'
 
 Water.destroy_all
+Review.destroy_all
+Log.destroy_all
 User.destroy_all
 
 puts "Creating users..."
@@ -56,7 +58,7 @@ urls.each do |url|
   text = html_doc.search('.located-beneath').map do |element|
     element.text.strip.length < 5 ? nil : element.text.strip
   end
-  new_water.description = text.compact.uniq.join
+  new_water.description = text.compact.uniq.first
 
   new_water.photo = "http://www.finewaters.com#{html_doc.search('.lft-part').first.search('img').attribute('src').value}"
   

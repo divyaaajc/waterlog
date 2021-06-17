@@ -1,7 +1,7 @@
 <div class="banner-container">
   <%= video_tag "drop.mp4", autoplay: true, loop: true, muted: "muted", class: "home_video" %>
   <div class="banner">
-    <div class="banner-contents-container">
+    <div class="banner-contents-container mt-5">
       <h1 class="home-h1">Rediscover Water</h1>
       <p>Find, log and rate waters from all over the world.</p>
       <%= render 'shared/search_form' %>
@@ -15,7 +15,28 @@
 </div>
 
 <div class="container">
-
+  <div class="row homepage-sommelier-row pb-2">
+    <div class="d-flex justify-content-start">
+      <div class="d-flex align-items-center sommelier-image-container">
+        <%= image_tag "John-Berryman.jpg", class: "avatar-large", alt: "picture of sommelier" %>
+      </div>
+      <div class="sommelier-info-container">
+        <h2>Our Sommelier's Top Picks this week</h2>
+        <h3><strong>"</strong></h3><p>The waters for this week were grouped around the theme of alkalinity. Although usually associated
+        with car batteries and ammonia, high pH in natural mineral waters contributes a distinctive tartness and
+        dry mouthfeel that can be a welcome respite from the glut of mild, middle-pH waters on the market.
+        <br>
+        Try these waters with oily fish, samphire, or bitter seasonal greens. Foz paired beautifully with smoked Eel,
+        Icelandic stood up against the intense salinity of samphire and grilled Bream, but would also go brilliantly with
+        meatier fish, Bottarga, or any kind of roe. Lahuenco was a treat with buttered Cavolo Nero, and would also handsomely accompany Pak Choi.
+        </p>
+        <div class="info-footer row d-flex pr-4 justify-content-between">
+          <p>-- Devon Ashberry - Lead Somm at WaterLog<p>
+          <h3><strong>"</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
   <br>
   <div class="hr-container pr-2">
     <hr>
@@ -137,7 +158,7 @@
                   <p><%= water.brand %></p>
                   <p><%= water.source %></p>
                   <p><%= water.country %></p>
-                  <p>PH:<%= water.ph %></p>
+                  <p>pH:<%= water.ph %></p>
                 </div>
               </div>
             </div>

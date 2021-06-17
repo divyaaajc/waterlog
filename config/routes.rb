@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     post :add_water_to_log
     end
   end
-  resources :logs, only: :index
+  resources :logs, only: [:index, :destroy]
   resources :reviews, only: [:destroy, :update]
 end
