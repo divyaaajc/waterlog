@@ -9,7 +9,7 @@
           <p class="small-text-show"><%= @water.brand %></p>
           <p class="small-text-show"><%= @water.source %></p>
           <p class="small-text-show"><%= @water.country %></p>
-          <p class="small-text-show">PH: <%= @water.ph %></p>
+          <p class="small-text-show">pH: <%= @water.ph %></p>
         </div>
       </div>
       <div class="card-wide-image-container relative-card">
@@ -31,7 +31,7 @@
           <% if @reviewed %>
             <h3 class="mb-0">Nice work! You've tried this water</h3>
             <% elsif current_user.waters.include? @water%>
-              <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?' data-action="click->logs#showReview"><small id="review-slide" type="button" role="button" data-toggle="collapse" data-target="#review-form">Click to leave another review</small></h3>
+              <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?' data-action="click->logs#showReview"><small id="review-slide" type="button" role="button" data-toggle="collapse" data-target="#review-form">Click to leave a review</small></h3>
           <% else %>
               <h3 class="mb-0" id="review-slide" type="button" role="button" data-toggle="collapse" data-logs-target="reviewTitle" data-target="#review-form" data-text='What did you think?'><%= link_to "I've tried this water", add_water_to_log_water_path(@water), method: :post, remote: true, data: { action: "ajax:success->logs#showReview" } %></h5>
           <% end %>

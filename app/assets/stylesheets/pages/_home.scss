@@ -19,9 +19,20 @@
   p {
     font-color: grey;
     font-size: 12px;
-    margin-left: 20px;
-    margin-top: 15px;
+    padding-left: 9px;
+    padding-top: 33px;
+    padding-right: 50px;
+    padding-bottom: 36px;
   }
+}
+
+.carousel {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.carousel-inner {
+  padding-right: 15px;
 }
 
 .carousel-control-prev {
@@ -37,16 +48,38 @@
 }
 
 .sommeliers-comments-container {
-  padding-right: 148px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  height: 362px;
+  padding-top: 35px;
+  padding-right: 72px;
   border-style: solid;
   border-width: 1px;
   border-left-color: black;
   border-bottom-color: black;
+  border-top-color: black;
   border-right-color: rgba(0, 0, 0, 0.0);
-  border-top-color: rgba(0, 0, 0, 0.0);
   p {
-    padding-bottom: 8px;
+    padding-bottom: 36px;
     font-size: 20px;
+  }
+}
+
+.somm-comments-footer {
+  height: 100%;
+  width: 640px;
+  p {
+    font-size: 15px;
+    padding-top: 25px;
+    padding-right: 50px;
+    padding-bottom: 36px;
+    padding-left: 9px;
+    font-color: grey;
+  }
+  .avatar-small {
+    margin-right: 0px;
+    margin-top: 0px;
   }
 }
 
@@ -68,4 +101,16 @@
   content: '<';
   font-size: 50px;
   color: black;
+}
+
+#garth-reeves-comment {
+  padding-bottom: 34px;
+}
+
+#anne-de-tarot-comment {
+  padding-bottom: 6px;
+}
+
+#devon-ashberry-comment {
+  padding-bottom: 6px;
 }
