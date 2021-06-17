@@ -16,6 +16,23 @@
   display: flex;
 }
 
+.submit-button-home-hero {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  color: black;
+  background-color: white;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  // padding: 15px 32px;
+  font-size: 20px;
+  font-weight: 100;
+  transition: 0.5s;
+}
+
+
 
 .submit-button:hover {
   background-color: #f2f9ff;
@@ -23,19 +40,5 @@
 }
 
 .submit-button-random {
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  color: black;
-  background-color: white;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
-  // padding: 15px 32px;
-  font-size: 20px;
-  font-weight: 400;
-  padding: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
 }
 

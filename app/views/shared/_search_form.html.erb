@@ -1,7 +1,7 @@
 <%= simple_form_for :search, url: waters_path, method: :get do |f| %>
   <div class="searchbar-container">
     <input class="searchbar string required mr-0" type="text" name="search[query]" id="search_query" value="<%= params.dig(:search, :query) %>" />
-    <button name="button" type="submit" class="submit-button font-weight-normal">
+    <button name="button" type="submit" class="submit-button btn btn-flat pl-0 submit-button-home-hero font-weight-normal">
       SEARCH WATER
     </button>
   </div>
