@@ -42,7 +42,7 @@
 
         <%= yield %>
 
-        <%= link_to user_signed_in? ? logs_path : new_user_session_path(flash_notice: "sign-in" ), class:"vertical-text-right", style:"writing-mode: vertical-rl" do %>
+        <%= link_to logs_path, class:"vertical-text-right", style: "writing-mode: vertical-rl" do %>
           <div class="right-cta-column" style="z-index: 99;">
             <div class="vertical-offset" style="height: calc(50vh - 72px);">
             </div>
