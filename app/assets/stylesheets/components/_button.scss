@@ -1,4 +1,5 @@
 .submit-button {
+  padding-right: 0px;
   border-style: solid;
   border-color: black;
   border-width: 1px;
@@ -13,6 +14,7 @@
   font-weight: 100;
   transition: 0.5s;
   justify-content: center;
+  align-items: center;
   display: flex;
 }
 
